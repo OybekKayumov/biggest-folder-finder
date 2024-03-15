@@ -19,6 +19,7 @@ public class Main {
 
         long sum = 0;
         File[] files = folder.listFiles();
+        assert files != null;
         for (File file : files) {
             sum += getFolderSize(file);
         }
