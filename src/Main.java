@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String folderPath = "c:/users/o.kayumov/Desktop";
+        String folderPath = "c:/users/user/Desktop";
         File file = new File(folderPath);
 
         System.out.println(file.length());
