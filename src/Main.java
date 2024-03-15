@@ -4,11 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String folderPath = "c:/users/user/Desktop";
-        File file = new File(folderPath);
+        MyThread thread = new MyThread(1);
+        MyThread thread2 = new MyThread(2);
 
-        System.out.println(file.length());
-        System.out.println(getFolderSize(file));
+        thread.start();
+        thread2.start();
+
+//        String folderPath = "c:/users/o.kayumov/Desktop";
+//        File file = new File(folderPath);
+//
+//        System.out.println(file.length());
+//        System.out.println(getFolderSize(file));
         //Desktop size: 81,3 МБ (85349011 байт) -> 85349011
     }
 
