@@ -30,6 +30,7 @@ public class Main {
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(calc);
         System.out.println(root.getSize());
+//        System.out.println(root);
 
         //*
         System.out.println(getHumanReadableSize(240640));
@@ -59,7 +60,7 @@ public class Main {
         for (int i = 0; i < sizeMultipliers.length; i++) {
             double value = size / Math.pow(1024, i);
             if (value < 1024) {
-                return Math.round(value) + "" +
+                return Math.round(value * 100)/100. + "" +
                         sizeMultipliers[i] +
                         (i > 0 ? "b" : "");
             }
