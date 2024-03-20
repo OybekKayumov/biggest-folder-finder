@@ -8,11 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MyThread thread = new MyThread(1);
-        MyThread thread2 = new MyThread(2);
-
-        thread.start();
-        thread2.start();
+//        MyThread thread = new MyThread(1);
+//        MyThread thread2 = new MyThread(2);
+//
+//        thread.start();
+//        thread2.start();
 
 //        String folderPath = "c:/users/user/Desktop";
 //        File file = new File(folderPath);
@@ -24,10 +24,12 @@ public class Main {
         //*
         String folderPath = "c:/users/o.kayumov/Desktop";
         File file = new File(folderPath);
-        FolderSizeCalc calc = new FolderSizeCalc(file);
+        Node root = new Node(file);
+
+        FolderSizeCalc calc = new FolderSizeCalc(root);
         ForkJoinPool pool = new ForkJoinPool();
-        long size = (long) pool.invoke(calc);
-        System.out.println(size);
+        pool.invoke(calc);
+        System.out.println(root.getSize());
 
         //*
         System.out.println(getHumanReadableSize(240640));
